@@ -44,7 +44,7 @@ export default {
 .cb-time{
   color: #FFC900;
   font-size: 13px;
-  margin-left: -190px;
+  margin-right: 70%;
   margin-top: 5px;
 }
 .cb-title{

@@ -13,7 +13,7 @@ import callboard from '@/components/callboard'
 Vue.use(Router)
 
 export default new Router({
-	mode:'history',
+	//mode:'history',
   routes: [
     {
       path: '/',

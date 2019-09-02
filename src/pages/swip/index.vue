@@ -1,6 +1,6 @@
 <template>
-	<div class="page">
-		<swiper :options="swiperOption" ref="mySwiper" class="content">
+	<div class="swipPage">
+		<swiper :options="swiperOption" ref="mySwiper" class="swipContent">
 			<!-- slides -->
 			<swiper-slide><analyze></analyze></swiper-slide>
 			<swiper-slide><dormitory></dormitory></swiper-slide>
@@ -41,9 +41,9 @@ export default {
     data() {
       return {
 		currentTab:1,
+		getIndex:0,
 		lists:[],
 		info:[],
-		// swiperOption:{}
         swiperOption: {
             pagination: {
 				el: '.swiper-pagination',
@@ -55,7 +55,8 @@ export default {
 			slidesPerView: 1.16, 
 			spaceBetween: 4,
 			notNextTick: true,
-        }
+        },
+
       }
 	},
 	created:function(){
@@ -66,8 +67,7 @@ export default {
 		getParams:function(){
 			var pageid = this.$route.params.id;
 			this.swiperOption.initialSlide = pageid;
-			
-		}
+		},
 	},
     computed: {
       swiper() {
@@ -78,18 +78,20 @@ export default {
 
 </script>
 
-<style scoped>
-page{
-	width: 100%;
-	height: 100%;
-}
-.page{
+<style>
+
+.swipPage{
   width: 100%;
   height: 100%;
   background-color: #F0EFF5;
 }
-.content{
+.swipContent{
   width: 100%;
   height: 96%;
 }
+.swiper-pagination-bullet-active{
+  background: #FF9966;
+  opacity: 1;
+}
+
 </style>

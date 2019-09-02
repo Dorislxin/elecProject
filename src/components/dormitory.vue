@@ -10,7 +10,7 @@
       	
         <div class="top10">
           <div class="box"></div>
-          <p>寝室过去12个月的用电历史数据</p>
+          <p>寝室过去12个月的用电历史数据<br>（双击圆点可获得月数据）</p>
         </div>
         <div class="wrap">
           <div id="yearChart"></div>
@@ -143,7 +143,7 @@ export default {
         },
         yAxis: {
             type: 'value',
-            name: '用电量',
+            //name: '用电量',
             axisLabel: {
                 rotate: -45,
             }
@@ -219,7 +219,7 @@ export default {
         },
         yAxis: {
             type: 'value',
-            name: '用电量',
+            //name: '用电量',
             axisLabel: {
                 rotate: -45,
             }
@@ -366,6 +366,7 @@ page{
  
 }
 .top10{
+  width:94%;
   padding-top: 20px;
 }
 .top10,.distribution{

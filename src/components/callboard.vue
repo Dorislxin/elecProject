@@ -49,6 +49,7 @@ export default {
       cbTime:'',//最新通知时间
       cbTitle:'',//最新通知标题
       info:[],//历史通知
+      infoSort:[],
       isShowContent:-1,//是否展示历史通知内容
       isRightArrow:-1,//控制右箭头
       isDownArrow:-1,//控制下箭头
@@ -65,7 +66,6 @@ export default {
     getNewBulletin(){
       this.$http.get(store.state.baseUrl+"/messagePush/getNewestBulletin")
       .then((res)=>{
-        // console.log(res.data);
         this.cbTitle = res.data.data.title;
         this.cbContent = res.data.data.content;
         this.cbTime = store.state.utils.formatTime(res.data.data.releaseTime);
@@ -77,9 +77,11 @@ export default {
 		getAllBulletin(){
 			this.$http.get(store.state.baseUrl+"/messagePush/getAllBulletin")
 			.then((res)=>{
-				// console.log(res.data);
-				this.info = res.data.data;
+         this.info = res.data.data;
 
+         this.info.sort((a,b) => {
+            return a.releaseTime > b.releaseTime ? -1 : 1;
+        })
 				//获得时间
 				for(var i=0;i<this.info.length;i++){
 				this.info[i].releaseTime = store.state.utils.formatTime(this.info[i].releaseTime);
@@ -101,7 +103,7 @@ export default {
         this.isDownArrow = index;
         this.isRightArrow = index;
       }      
-    }
+    }, 
   },
 
 }

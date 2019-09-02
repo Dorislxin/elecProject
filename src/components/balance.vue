@@ -125,8 +125,6 @@ import store from "../stores/store";
 	#top p{
 		color: #ffffff;
 		margin-left: 20px;
-		
-		/* font-size: 13px; */
 	}
 	#content{
 		width: 100%;
@@ -135,8 +133,8 @@ import store from "../stores/store";
 		position:relative;
 	}
 	#lastMoney p{
-		margin-top: 0px;
-	}
+	 	margin-top: 0px;
+	 }
 	.box{
 		width: 8px;
 		height: 20px;
@@ -149,31 +147,40 @@ import store from "../stores/store";
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
-		padding: 10px 30px 10px 0;
+		padding-right: 10%;
+		margin-bottom: -2%;
 		color: #A49EFD;
 		font-size: 12px;
 	}
-	#lastMoney,#elecSpend,#start,#expectOutageTime{
-		margin-bottom: 25px;
+	#lastMoney,#elecSpend,#expectOutageTime{
+		margin-bottom: 8px;
+		display: flex;
+		flex-direction: row;
+	}
+	#start{
+		width:100%;
+		height: 40px;
+		margin-bottom: 20px;
 		display: flex;
 		flex-direction: row;
 	}
 	.elec{
 		width: 90px;
-		height: 30px;
+		height: 20px;
 		margin-top: 20px;
 		padding-top: 5px;
 		padding-right: 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		line-height: 12px;
 	}
 	.elec p{
 		margin-top: 0px;
 	}
 	#elecSpend{
 		margin-left: 20px;
-		width: 260px;
+		width: 86%;
 		height: 100px;
 		border: 1px solid #DEDCFF;
 		border-radius: 8px;
@@ -182,7 +189,7 @@ import store from "../stores/store";
 		flex-direction: row;
 	}
 	.div1{
-		width: 130px;
+		width: 50%;
 		height: 100px;
 		display: flex;
 		flex-direction: column;
@@ -201,11 +208,14 @@ import store from "../stores/store";
 	}
 	.mouth{
 		font-size: 20px;
+
 	}
 	.mouth1{
 		font-size: 18px;
 	}
 	#con{
+		width: 100%;
+		height: auto;
     	position: absolute;
     	z-index:2;
     }

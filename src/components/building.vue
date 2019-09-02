@@ -1,30 +1,23 @@
 <template>
 	<div class="page">
 		<div class="contain">
+			<img src="../../static/images/img2.jpg">
 			<header class="header">
-				<p>寝室用电情况</p>
+				<p>楼栋用电情况</p>
 			</header>
-		<div id="content">
-			<div id="con">
-				
+			<div id="content">
 				<div class="top10">
 					<div class="box"></div>
 					<p>用电量TOP10</p>
 				</div>
 				<div class="chart"></div>
-			
+				
 				<div class="distribution">
 					<div class="box"></div>
 					<p>楼栋用电量分布</p>
 				</div>
 				<div class="chart"></div>
-				
-			
-				
-				
 			</div>
-			<img src="../../static/images/img2.jpg">
-		</div>
 	</div></div>
 	
 </template>
@@ -102,7 +95,7 @@
 			    var options = {
 			    	tooltip: {
 			            trigger: 'item',
-			            formatter: "{b} : {c} \n({d}%)"
+			            formatter: "{d}%"
 			        },
 			        color: ['#E9285D', '#FF8646', '#8780FD', '#17DFB7','#71ADFC'],
 			        series: [
@@ -175,9 +168,6 @@
 				})
 			},
 		},
-		// mounted:function(){
-		// 	this.elecTop()
-		// },
 		components: {
 			mpvueEcharts
 		}
@@ -185,11 +175,6 @@
 	
 </script>
 <style scoped>
-page{
-  width: 100%;
-  height: 100%;
-
-}
 .page{
   display: flex;
   flex-direction: column;
@@ -201,6 +186,7 @@ page{
   background-color: #F0EFF5;
 }
 
+
 .contain{
   display: flex;
   flex-direction: column;
@@ -208,7 +194,7 @@ page{
   width: 95%;
   height: 87%;
   margin-top: 8%;
-  background-color: #ffffff;
+  position: relative;
   box-shadow: 0 0 20px #E0DFE4;
 }
 .header{
@@ -226,17 +212,17 @@ page{
     /* font-size: 13px; */
 }
     #content{
-        width: 100%;
-        height: 90%;
-        background: #fff;
-        position: relative;
+  width: 100%;
+  height: 85%;
+  overflow:scroll;
+  overflow-x: hidden;
     }
     .top10{
         padding-top: 20px;
 
     }
     .top10,.distribution{
-        margin-bottom: 8px;
+        
         display: flex;
         flex-direction: row;
         color: #7D8983;
@@ -262,19 +248,10 @@ page{
         border-radius: 20px;
         box-shadow: 0 0 10px #E4F0FF;
     }
-    #con{
-		width: 100%;
-		height: auto;
-    	position: absolute;
-    	z-index:2;
-		
-    }
     img{
     	width: 100%;
-    	height: 50%;
-    	bottom:0;
-    	left:0;
-    	position: absolute;
-    	z-index: 1;
+    	height: 100%;
+    	position:absolute;
+  z-index: -1;
     }
-</style>
+</style> 
